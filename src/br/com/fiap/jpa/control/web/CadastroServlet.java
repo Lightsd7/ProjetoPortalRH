@@ -1,7 +1,10 @@
 package br.com.fiap.jpa.control.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,14 +29,28 @@ public class CadastroServlet extends HttpServlet {
 			String local = req.getParameter("local");
 
 			Treinamento treinamento = new Treinamento(nome, descricao, data, local);
-			new TreinamentoDAO().adicionar(treinamento);
+			// new TreinamentoDAO().adicionar(treinamento);
+//			TreinamentoDAO.getInstance().adicionar(treinamento);
+//
+//			req.setAttribute("treinamento", treinamento);
+//			req.setAttribute("mensagem", "Cadastro realizado com sucesso!");
+//
+//			req.getRequestDispatcher("confirmacao.jsp").forward(req, resp);
 
-			req.setAttribute("treinamento", treinamento);
+			TreinamentoDAO dao = new TreinamentoDAO();
+
+			dao.adicionar(treinamento);
+			RequestDispatcher dispatcher;
+			List<Treinamento> treino = new ArrayList<>();
+			treino.add(treinamento);
+			req.setAttribute("treino", treino);
 			req.setAttribute("mensagem", "Cadastro realizado com sucesso!");
+			dispatcher = req.getRequestDispatcher("confirmacao.jsp");
+			dispatcher.forward(req, resp);
 
-			req.getRequestDispatcher("confirmacao.jsp").forward(req, resp);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Deu ruim!!!");
 		}
 	}
 

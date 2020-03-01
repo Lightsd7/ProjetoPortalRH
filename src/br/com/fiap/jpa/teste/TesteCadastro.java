@@ -16,7 +16,7 @@ public class TesteCadastro {
 		EntityManager em = fabrica.createEntityManager();
 
 		// Instanciar produto
-		Produto prod = new Produto("Xiaomi", 1000, 950, null, null, Categoria.ELETRONICO);
+		Produto prod = new Produto("Xiaomi", 1200, 950, null, null, Categoria.ELETRONICO);
 		
 		em.persist(prod); //Cadastro produto
 		
