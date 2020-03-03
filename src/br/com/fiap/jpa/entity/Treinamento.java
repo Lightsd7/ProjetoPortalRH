@@ -1,6 +1,5 @@
 package br.com.fiap.jpa.entity;
 
-
 //import java.util.Calendar;
 
 import javax.persistence.Column;
@@ -21,7 +20,7 @@ public class Treinamento {
 	@Id
 	@Column(name = "ID_TREINAMENTO")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ntreinamento")
-	private int id;
+	private int codigo;
 
 	@Column(name = "NOME", nullable = false, length = 100)
 	private String nome;
@@ -49,28 +48,44 @@ public class Treinamento {
 		this.local = local;
 	}
 
-	public int getId() {
-		return id;
+	public int getCodigo() {
+		return codigo;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getNome() {
 		return nome;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public String getDescricao() {
 		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getDataTreinamento() {
 		return dataTreinamento;
 	}
 
+	public void setDataTreinamento(String dataTreinamento) {
+		this.dataTreinamento = dataTreinamento;
+	}
+
 	public String getLocal() {
 		return local;
+	}
+
+	public void setLocal(String local) {
+		this.local = local;
 	}
 
 }

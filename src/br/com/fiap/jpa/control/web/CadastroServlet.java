@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.jpa.entity.Treinamento;
-import br.com.fiap.jpa.model.dao.TreinamentoDAO;
+import br.com.fiap.jpa.model.dao.TreinamentoDAOImpl;
+
 
 @WebServlet("/cadastro-treinamento")
 public class CadastroServlet extends HttpServlet {
@@ -29,17 +30,9 @@ public class CadastroServlet extends HttpServlet {
 			String local = req.getParameter("local");
 
 			Treinamento treinamento = new Treinamento(nome, descricao, data, local);
-			// new TreinamentoDAO().adicionar(treinamento);
-//			TreinamentoDAO.getInstance().adicionar(treinamento);
-//
-//			req.setAttribute("treinamento", treinamento);
-//			req.setAttribute("mensagem", "Cadastro realizado com sucesso!");
-//
-//			req.getRequestDispatcher("confirmacao.jsp").forward(req, resp);
+			TreinamentoDAOImpl dao = new TreinamentoDAOImpl();
 
-			TreinamentoDAO dao = new TreinamentoDAO();
-
-			dao.adicionar(treinamento);
+			dao.cadastrar(treinamento);
 			RequestDispatcher dispatcher;
 			List<Treinamento> treino = new ArrayList<>();
 			treino.add(treinamento);
