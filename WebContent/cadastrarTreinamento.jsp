@@ -24,6 +24,9 @@
 			<label> Local:
 				<input type="text" name="local" placeholder="Informe o local do treinamento" />
 			</label>
+			<label> Quantidade de vagas:
+				<input type="text" name="vagas" placeholder="Informe a quantidade de vagas do treinamento" />
+			</label>
 			<button>Cadastrar</button>
 		</form>
 	</div>

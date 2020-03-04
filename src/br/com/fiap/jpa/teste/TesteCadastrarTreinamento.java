@@ -12,7 +12,7 @@ public class TesteCadastrarTreinamento {
 		EntityManager em = fabrica.createEntityManager();
 
 		// Instanciar produto
-		Treinamento treinamento = new Treinamento("React", "Desenvolvimento", "03/04/2020", "Av. Paulista");
+		Treinamento treinamento = new Treinamento("React", "Desenvolvimento", "03/04/2020", "Av. Paulista",20);
 		
 		em.persist(treinamento); //Cadastro produto
 		

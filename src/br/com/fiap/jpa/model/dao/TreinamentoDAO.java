@@ -78,7 +78,7 @@ public class TreinamentoDAO {
 //	        System.out.println("Data do treinamento: "+t.getDataTreinamento());
 //	        System.out.println("Local do treinamento: "+t.getLocal());
 //	        System.out.println("----------------------------------------------");
-			return new Treinamento(t.getNome(), t.getDescricao(), t.getDataTreinamento(), t.getLocal());
+			return new Treinamento(t.getNome(), t.getDescricao(), t.getDataTreinamento(), t.getLocal(), t.getNumVagas());
 	        
 	    }
 		return null;

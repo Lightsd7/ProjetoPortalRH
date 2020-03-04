@@ -16,6 +16,7 @@
 			<p>Descrição do treinamento: ${t.descricao}</p>
 			<p>Data do treinamento: ${t.dataTreinamento}</p>
 			<p>Local do treinamento: ${t.local}</p>
+			<p>Número de vagas do treinamento: ${t.numVagas}</p>
 		</c:forEach>
 
 		<p>${mensagem}</p>

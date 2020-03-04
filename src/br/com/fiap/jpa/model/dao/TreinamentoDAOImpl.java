@@ -17,7 +17,6 @@ public class TreinamentoDAOImpl implements TreinamentoDAOInterface {
 	@Override
 	public void cadastrar(Treinamento treinamento) {
 		em.persist(treinamento);
-
 	}
 
 	@Override

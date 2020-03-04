@@ -3,7 +3,7 @@
 	<persistence-unit name="oracle"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-			<class>br.com.fiap.jpa.entity.Treinamento</class>
+			<!-- <class>br.com.fiap.jpa.entity.Treinamento</class> -->
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.hbm2ddl.auto" value="update" /> <!-- update, create, validade -->
@@ -11,9 +11,9 @@
 				value="org.hibernate.dialect.Oracle12cDialect" />
 			<property name="javax.persistence.jdbc.driver"
 				value="oracle.jdbc.OracleDriver" />
-			<property name="javax.persistence.jdbc.user" value="RM82508" />
+			<property name="javax.persistence.jdbc.user" value="RM82352" />
 			<property name="javax.persistence.jdbc.password"
-				value="041289" />
+				value="071191" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
 		</properties>

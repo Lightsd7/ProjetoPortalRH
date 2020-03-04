@@ -35,17 +35,21 @@ public class Treinamento {
 
 	@Column(name = "LOCAL_TREINAMENTO", nullable = false, length = 155)
 	private String local;
+	
+	@Column( name = "NR_VAGAS", nullable = false)
+	private int numVagas;
 
 	public Treinamento() {
 		super();
 	}
 
-	public Treinamento(String nome, String descricao, String dataTreinamento, String local) {
+	public Treinamento(String nome, String descricao, String dataTreinamento, String local, int numVagas) {
 		super();
 		this.nome = nome;
 		this.descricao = descricao;
 		this.dataTreinamento = dataTreinamento;
 		this.local = local;
+		this.numVagas = numVagas;
 	}
 
 	public int getCodigo() {
@@ -86,6 +90,14 @@ public class Treinamento {
 
 	public void setLocal(String local) {
 		this.local = local;
+	}
+
+	public int getNumVagas() {
+		return numVagas;
+	}
+
+	public void setNumVagas(int numVagas) {
+		this.numVagas = numVagas;
 	}
 
 }
