@@ -11,3 +11,7 @@
 	<button class="botao">Login</button>
 </form>
 <%@include file="footer.jsp"%>
+
+<form action="cadastrarPessoa" method="post">
+	<button class="botao" name="teste">Teste dos Treinamentos</button>
+</form>
