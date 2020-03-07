@@ -1,14 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="pt_br">
-<head>
-	<meta charset="UTF-8">
-	<title>PAIF</title>
-
-</head>
-<body>
-	<a href="cadastrarTreinamento.jsp">Cadastrar Treinamento</a>
-	<a href="cadastrarPessoa.jsp">Ver todos os Treinamentos</a>
-</body>
-</html>
+<%@include file="header.jsp"%>
+<form action="logar" method="POST" name="formulario">
+	<h1>Entre com o seu código</h1>
+	<input type="password" name="codigo" class="input input2"
+		placeholder="&#xf007; Código" required />
+	<c:choose>
+		<c:when test="${not empty erroId}">
+			<p class="invalid-user">Código inválido!</p>
+		</c:when>
+	</c:choose>
+	<button class="botao">Login</button>
+</form>
+<%@include file="footer.jsp"%>

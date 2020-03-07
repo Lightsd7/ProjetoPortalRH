@@ -2,22 +2,16 @@ package br.com.fiap.jpa.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "TB_COLABORADOR")
-@SequenceGenerator(name = "colaborador", sequenceName = "COLABORADOR_SEQ", allocationSize = 1)
-
 public class Colaborador {
 
 	@Id
-	@Column(name = "ID_COLABORADOR")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "colaborador")
-	private int codigo;
+	@Column(name = "ID_COLABORADOR", nullable = false, unique = true)
+	private int id;
 
 	@Column(name = "NOME", nullable = false, length = 50)
 	private String nome;
@@ -35,10 +29,12 @@ public class Colaborador {
 	private String cargo;
 
 	public Colaborador() {
+
 	}
 
-	public Colaborador(String nome, String email, String telefone, String departamento, String cargo) {
+	public Colaborador(int id, String nome, String email, String telefone, String departamento, String cargo) {
 		super();
+		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
@@ -46,12 +42,12 @@ public class Colaborador {
 		this.cargo = cargo;
 	}
 
-	public int getCodigo() {
-		return codigo;
+	public int getId() {
+		return id;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {

@@ -39,12 +39,13 @@ public class CadastroServlet extends HttpServlet {
 			EntityManager em = fabrica.createEntityManager();
 			TreinamentoDAOImpl dao = new TreinamentoDAOImpl(em);
 
-			dao.commit();
-			dao.cadastrar(treinamento);			
+			dao.cadastrar(treinamento);
+			dao.commit();						
 			RequestDispatcher dispatcher;
 			List<Treinamento> treino = new ArrayList<>();
 			treino.add(treinamento);
 			req.setAttribute("treino", treino);
+//			req.setAttribute("pessoa", treinamento);
 			req.setAttribute("mensagem", "Cadastro realizado com sucesso!");
 			dispatcher = req.getRequestDispatcher("confirmacao.jsp");
 			dispatcher.forward(req, resp);

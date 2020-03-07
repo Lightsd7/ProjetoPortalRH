@@ -6,11 +6,11 @@ public interface ColaboradorDAO {
 	
 	void cadastrar(Colaborador colaborador);
 	
-	Colaborador pesquisar(int codigo);
+	Colaborador pesquisar(int id);
 
 	void atualizar(Colaborador colaborador);
 
-	void deletar(int codigo);
+	void deletar(int id);
 
 	void commit();
 

@@ -20,11 +20,12 @@ public class ColaboradorDAOImpl implements ColaboradorDAO {
 	}
 
 	@Override
-	public Colaborador pesquisar(int codigo) {
-		Colaborador colaborador = em.find(Colaborador.class, codigo);
-		// Validar se existe um treinamento existente
+	public Colaborador pesquisar(int id) {
+		Colaborador colaborador = em.find(Colaborador.class, id);
+		// Validar se existe um colaborador existente
 		if (colaborador == null) {
 			System.out.println("Colocar uma exceção para o usuário");
+			return null;
 		}
 
 		return colaborador;
@@ -32,7 +33,7 @@ public class ColaboradorDAOImpl implements ColaboradorDAO {
 
 	@Override
 	public void atualizar(Colaborador colaborador) {
-		pesquisar(colaborador.getCodigo());
+		pesquisar(colaborador.getId());
 		em.merge(colaborador);
 	}
 

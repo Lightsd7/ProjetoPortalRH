@@ -4,14 +4,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.fiap.jpa.entity.Colaborador;
 import br.com.fiap.jpa.model.dao.TreinamentoDAO;
 
 public class Teste {
 
 	public static void main(String[] args) {
 		// Instansiar a fábrica de Entity Manager
-		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("oracle"); // nome dado na persistence.xml, desconfiar na prova que pode ter pegadinha
-		
+		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("oracle"); // nome dado na
+																							// persistence.xml,
+																							// desconfiar na prova que
+																							// pode ter pegadinha
+
 		// Obter um objeto de Entity Manager
 		EntityManager em = fabrica.createEntityManager();
 //		
@@ -22,16 +26,20 @@ public class Teste {
 //		
 //		em.close();
 //		fabrica.close();
-		
-		
+
 //		List<Treinamento> results = query.getResultList();
 //		System.out.println(results);
-		
-		TreinamentoDAO t = new TreinamentoDAO();
-		t.selecionarTudo();
-				
+
+//		TreinamentoDAO t = new TreinamentoDAO();
+//		t.selecionarTudo();
+
+		Colaborador colab = new Colaborador(2, "Fernanda", "email", "telefone", "rh", "cargo");
+		em.persist(colab);
+		em.getTransaction().begin();
+		em.getTransaction().commit();
+
 		em.close();
-		fabrica.close();		
+		fabrica.close();
 	}
 
 }

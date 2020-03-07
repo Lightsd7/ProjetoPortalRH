@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>04-JPA-Introducao</groupId>
-	<artifactId>04-JPA-Introducao</artifactId>
+	<groupId>ProjetoPortalRH</groupId>
+	<artifactId>ProjetoPortalRH</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -29,7 +29,7 @@
 			<artifactId>jdbc-driver</artifactId>
 			<version>12</version>
 			<scope>system</scope>
-			<systemPath>C:\Users\logonrmlocal\Desktop/ojdbc8.jar</systemPath>
+			<systemPath>C:\Users\Bundynote\Documents\Coisas do menino/ojdbc8.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
